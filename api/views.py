@@ -8,3 +8,9 @@ def getData(request):
     items=Item.objects.all()
     serializer=IteamSerializer(items,many=True)
     return Response(serializer.data)
+@api_view(['POST'])
+def addItem(request):
+    serializer=IteamSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
