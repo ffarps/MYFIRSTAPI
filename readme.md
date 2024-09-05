@@ -22,6 +22,7 @@ python manage.py migrate
 python manage.py shell
 ```
 
+## Use this to test if the api is working
 ```bash
 from base.models import Item
 ```
